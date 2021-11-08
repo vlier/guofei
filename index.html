@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOMEPAGE</title>
+    <link rel="stylesheet" href="main.css">
+
+    <script src="./jquery/jquery-3.6.0.js"></script>
+    <script text="text/javascript">
+        $(function () {
+            $('.left>.tab>.tab-item').mouseenter(function () {
+
+                $(this).addClass('active').siblings('li').removeClass('active');
+                var idx = $(this).index();
+                $('.right>.main').eq(idx).addClass('selected').siblings('div').removeClass('selected');
+            });
+        });
+
+        $(function () {
+            var listLen = $(".photore li").length, i = 0, setInter, speen = 3000;
+            /*图片轮播*/
+            $(".photore ol li:first").addClass("on");
+            $(".photore ul li:first").show();
+
+            $(".photore ol li").each(function (index, element) {
+                $(element).click(function () {
+                    i = index;
+                    $(this).addClass("on").siblings().removeClass("on");
+                    $(".photore ul li").eq(index).animate({ opacity: "show" }, 300).siblings().animate({ opacity: "hide" }, 300);
+                })
+                $(element).hover(function () {
+                    clearInterval(setInter);
+                }, function () {
+                    outPlay();
+                });
+            })
+
+
+            out_fun = function () {
+                if (i < listLen) { i++; } else { i = 0; };
+                $(".photore ol li").eq(i).addClass("on").siblings().removeClass("on");
+                $(".photore ul li").eq(i).animate({ opacity: "show" }, 300).siblings().animate({ opacity: "hide" }, 300);
+            }
+
+            outPlay = function () {
+                setInter = setInterval("out_fun()", speen);
+            }
+            outPlay();
+        })
+    </script>
+</head>
+
+<body>
+
+    <div class="box">
+        <div class="left">
+            <ul class="tab">
+                <li class="tab-item active">个人简介</li>
+                <li class="tab-item">特长1</li>
+                <li class="tab-item">特长2</li>
+                <li class="tab-item">特长3</li>
+                <li class="tab-item">特长4</li>
+                <li class="tab-item ">特长5</li>
+            </ul>
+        </div>
+        <div class="right">
+            <div class="main selected">
+                <div class="word">
+                    <h1>
+                        邓绮童
+                    </h1>
+                    <p>
+                        ●广东肇庆人，现就读于广东海洋大学，是一名大二学生。
+
+
+
+                    </p>
+                    <p>●身高一米六，但是常常被人认为是一米五五。</p>
+                    <p>● 性格热情开朗，但是因为长着一张很凶的脸，经常吓哭刚刚见面的小孩子。</p>
+                    <p>●兴趣广泛，热爱生活和可爱浪漫的东西。</p>
+                </div>
+                <div class="photo">
+                    <img src="./zhaopian/自己.jpg" alt="自拍照">
+                </div>
+            </div>
+
+            <div class="main">
+                <div class="word">
+                    <h1>积极好学</h1>
+                    <p class="solo">会前端网页，C语言，pr视频剪辑，ps等基本操作。</p>
+                    <p> ps：这个介绍页面就是我做的喔,点击蓝字也可查看我<a href="https://www.bilibili.com/video/BV1jM4y1V7au?t=10.2"
+                            target="_blank">剪辑的视频</a>喔OvO
+
+
+                    </p>
+
+                </div>
+                <div class="photo">
+                    <img src="./zhaopian/招新.jpg" alt="">
+                    </a>
+                </div>
+
+            </div>
+            <div class="main">
+                <div class="word">
+                    <h1>兴趣广泛</h1>
+                    <p>●热爱硬笔和书法。初三暑假正式开始练行书，喜欢感受下笔时思想放空，全神贯注的感觉。</p>
+                    <p>●喜欢做手工，动手能力较好。高中曾经与两名同学合作用废弃窗帘改造了两件衣服，并获得了那次环保时装秀的二等奖。</p>
+                    <p>●喜欢阅读，喜欢在书中和生活中感受别人的生活。</p>
+                    <p>●喜欢哼歌,闲时画画和摄影。</p>
+                </div>
+
+                <div class="photore">
+                    <ul>
+                        <li><img src="./zhaopian/摄影4.jpg" alt=""></li>
+                        <li><img src="./zhaopian/奖状.jpg" alt=""></li>
+                        <li><img src="./zhaopian/书柜.jpg" alt=""></li>
+                        <li><img src="./zhaopian/手工.jpg" alt=""></li>
+                        <li><img src="./zhaopian/书法作品.jpg" alt="" style="transform: rotate(270deg);"></li>
+                    </ul>
+                    <ol>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="main">
+                <div class="word">
+                    <h1>正能量</h1>
+                    <p class="solo">
+                        我曾多次积极参与家乡和学校的志愿活动，如慰问退伍老兵，过年派发物质，宣传家乡等志愿活动。也曾经为湛江市麻章区附近的小学上过义教书法课。
+                        在别人看来微不足道的一些事情，甚至是看起来在做无用功的事情，可能会在我们平常没有注意到的方面在影响着别人。我以前并不认为志愿活动筹集的那些物质能对人民生活有多大改善，但我自己亲身经历过后我才知道这些物质对一个家庭的重要性，我也知道了原来一升装的花生油是可以用半年之久还可以有三分之一的剩余的。
+                    </p>
+                </div>
+                <div class="photore">
+                    <ul>
+                        <li><img src="./zhaopian/采访2.jpg" alt=""></li>
+                        <li><img src="./zhaopian/义教.jpg" alt=""></li>
+                        <li><img src="./zhaopian/义教2.jpg" alt=""></li>
+                        <li><img src="./zhaopian/义教3.jpg" alt=""></li>
+                        <li><img src="./zhaopian/义教4.jpg" alt=""></li>
+                    </ul>
+                    <ol>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ol>
+                </div>
+            </div>
+            <div class="main">
+                <div class="word">
+                    <h1>热情开朗，乐于交友</h1>
+                    <p class="solo">
+                        具有五年班长经验的我是一个外表冷漠，但内心十分热情和浪漫主义的人。也因为担任过数年的班长，所以具有一定的组织能力和交际能力。对于如何处理不同的人际关系，与不同年龄的人相处的问题，
+                        解决方案其实很简单，清楚地明白交友的至关重要前提就是真诚和倾听并做到。
+                    </p>
+                </div>
+                <div class="photo">
+                    <img src="./zhaopian/义教2.jpg" alt="">
+                </div>
+            </div>
+            <div class="main">
+                <div class="word">
+                    <h1>刚强有韧性</h1>
+                    <p class="solo">
+                        我是个刚强勇敢的人，我并不害怕去面对坏结果，时间指针只会往前，我能做的也只是接受和改变。我也不会过度在意生活环境是否舒适，但我会追求生活环境的舒适。比如说今年暑假我可以无住宿条件地留在湛江湾实验室学习，不介意去研究生宿舍楼洗澡等问题，但是在可控的条件下，我会让我自己整洁干爽，让我的生活有条不紊。
+                    </p>
+
+                </div>
+                <div class="photo">
+                    <img src="./zhaopian/做收音机.jpg" alt="">
+                </div>
+            </div>
+
+        </div>
+
+</body>
+
+</html>

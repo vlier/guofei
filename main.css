@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url(./zhaopian/摄影4.jpg)  ;
+    background-size:1000px,300px;
+}
+
+.box {
+    width: 1200px;
+    height: 540px;
+    background: rgba(207, 237, 247, 0.4);
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 7%;
+
+}
+.left {
+   
+    float: left;
+    width: 230px;
+    height: 540px;
+    background-color: cadetblue;
+    background: rgba(0, 0, 0, 0.2);
+}
+ ul {
+    list-style-type: none;
+    flex-direction: row;
+}
+
+.box .left ul li {
+    position: relative;
+    cursor: pointer;
+    width: 200px;
+    height: 90px;
+    background: rgba(0, 0, 0, 0.2);
+    font-size: 23px;
+    color: #fff;
+    text-decoration: none;
+    padding-left: 30px;
+    line-height: 90px;
+}
+
+.box .left ul li:hover {
+    background-color: #ff6700;
+}
+
+
+
+.right {
+    float: right;
+    width: 970px;
+    height: 540px;
+    background-color: rgba(152, 233, 233, 0.2);
+    
+}
+.right .main{ 
+    display: none;
+}
+
+
+.right .main .word {
+    font-family:Microsoft YaHei;
+    float: left;
+    width: 470px;
+    height: 540px;
+    background: rgba(0, 0, 0, 0.5);
+    margin-left: 14px;
+    margin-bottom: 14px;
+}
+
+.right .main .word h1 {
+    padding: 10px 10px;
+    color: rgb(250, 250, 249);
+    font-size: 40px;
+}
+
+.right .main .word p {
+    text-align: left;
+    font-size: 25px;
+    font-weight: 500;
+    color: rgb(252, 252, 250);
+    font-style:normal;
+    display: block;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+ 
+.right .main .word .solo{
+    text-indent: 2em;
+}
+.right .main .word p a{
+    color: rgb(243, 172, 237);
+    text-decoration: none;
+}
+
+.right .main .word p a:hover{
+    color: #ff6700;
+    
+}
+
+.right .main .photo {
+    float:right;
+    width: 480px;
+    height: 540px;
+    background: rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+}
+.right .main .photo img{
+    display: inline-block;
+    height: 400px;
+    width: 400px;
+    margin-top: 45px;
+    border-radius: 10%;
+    
+}
+.right .main .photore {
+    align-items: center;
+    float:right;
+    width: 480px;
+    height: 540px;
+    background: rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+}
+
+.right .main .photore ul>li{
+   position: absolute;
+  
+}
+.right .main .photore img{
+    margin-left: 45px;
+    height: 400px;
+    width: 400px;
+    margin-top: 45px;
+    margin-right: ;
+    border-radius: 10%;
+    
+}
+
+.right .main .photore ol{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5,75px);
+    grid-template-rows: auto;
+    grid-gap: 1em;
+    gap: 1em;
+    float: right;
+    margin-top: 480px;
+    list-style: none;
+    left: 0;
+    top: 0;
+        
+}
+
+.right .main .photore ol li{
+    width: 25px;
+    height: 25px;
+    font-size: 15px;  
+    float: left;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 2em;
+    border: 5px solid #999999;
+    cursor:pointer;
+  
+}
+.right .main .photore ol li:hover{
+    background: rgb(248, 115, 230);
+}
+.right .main .photore ol li.on{
+    background:  #ff6700;
+}
+
+
+.right .main.selected{
+    display: block;
+}
+.box .left ul li.active{
+    background: #ff6700;
+}
+
+
+ 
